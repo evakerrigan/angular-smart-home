@@ -1,0 +1,58 @@
+{
+  "root": true,
+  "ignorePatterns": [
+    "projects/**/*"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "*.ts"
+      ],
+      "extends": [
+        "eslint:recommended",
+        "@typescript-eslint/recommended",
+        "@typescript-eslint/stylistic",
+        "@angular-eslint/recommended",
+        "@angular-eslint/template/process-inline-templates",
+        "plugin:unicorn/recommended"
+      ],
+      "rules": {
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "app",
+            "style": "camelCase"
+          }
+        ],
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "app",
+            "style": "kebab-case"
+          }
+        ]
+      }
+    },
+    {
+      "files": [
+        "*.html"
+      ],
+      "extends": [
+        "@angular-eslint/template/recommended",
+        "@angular-eslint/template/accessibility"
+      ],
+      "rules": {}
+    }
+  ],
+  "rules": {
+    "unicorn/prefer-const": "error",
+    "unicorn/no-var": "error",
+    "unicorn/prefer-arrow-callback": "error",
+    "unicorn/prefer-template": "error",
+    "unicorn/no-console-spaces": "error",
+    "unicorn/prefer-includes": "error",
+    "unicorn/prefer-string-slice": "error"
+  }
+}
